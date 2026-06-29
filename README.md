@@ -10,9 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.2.2`
-- The first fork release republishes the upstream `anycubic-card.js` asset so the fork can be installed through HACS.
-- Future fork releases are intended to track the entity IDs and extra features of `hass-anycubic_cloud_v3`.
+- Current fork release: `v0.2.7`
+- Version `v0.2.7` adds compatibility mappings for the stable entity IDs used by `hass-anycubic_cloud_v3` `v0.2.7`, including print progress, job status, time values, temperatures, online status, preview image, and ACE spool sensors.
+- The first fork release republished the upstream `anycubic-card.js` asset so the fork can be installed through HACS.
 - The upstream card was originally built for the original Anycubic Cloud integration and may not follow all entity IDs/features of this forked integration.
 
 ## Features
