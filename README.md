@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.2.7`
-- Version `v0.2.7` adds compatibility mappings for the stable entity IDs used by `hass-anycubic_cloud_v3` `v0.2.7`, including print progress, job status, time values, temperatures, online status, preview image, and ACE spool sensors.
+- Current fork release: `v0.2.8`
+- Version `v0.2.8` keeps compatibility with `hass-anycubic_cloud_v3` `v0.2.8` and adds fallback mappings for existing German entity IDs while keeping stable English entity IDs as the expected default.
+- Version `v0.2.7` added compatibility mappings for the stable entity IDs used by `hass-anycubic_cloud_v3` `v0.2.7`, including print progress, job status, time values, temperatures, online status, preview image, and ACE spool sensors.
 - The first fork release republished the upstream `anycubic-card.js` asset so the fork can be installed through HACS.
 - The upstream card was originally built for the original Anycubic Cloud integration and may not follow all entity IDs/features of this forked integration.
 
@@ -64,7 +65,7 @@ type: custom:anycubic-card
 printer_id: <home-assistant-device-id>
 ```
 
-The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use `hass-anycubic_cloud_v3` version `0.2.7` or newer.
+The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use `hass-anycubic_cloud_v3` version `0.2.8` or newer.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log.
 

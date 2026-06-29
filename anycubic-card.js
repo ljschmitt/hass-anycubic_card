@@ -2242,7 +2242,8 @@
   }
   function ri(t, e, i, r) {
     const l = {
-      ace_spools: ["ace_spools", "ace_spulen", "materialregal_spulen"],
+      ace_spools: ["ace_spools", "ace_spulen"],
+      ace_run_out_refill: ["ace_run_out_refill", "ace_nachfullung_bei_filamentende"],
       current_status: ["current_status", "aktueller_status"],
       drying_active: ["drying_active", "trocknung_aktiv"],
       drying_remaining_time: ["drying_remaining_time", "trocknung_verbleibende_zeit"],
@@ -2257,11 +2258,17 @@
       job_state: ["job_state", "auftragsstatus"],
       job_time_elapsed: ["job_time_elapsed", "verstrichene_zeit"],
       job_time_remaining: ["job_time_remaining", "verbleibende_zeit"],
+      material_rack_spools: ["material_rack_spools", "materialregal_spulen"],
+      mqtt_connection_active: ["mqtt_connection_active", "mqtt_verbindung_aktiv"],
       nozzle_temperature: ["nozzle_temperature", "dusentemperatur"],
+      pause_print: ["pause_print", "druck_pausieren"],
+      print_speed: ["print_speed", "druckgeschwindigkeit"],
       printer_online: ["printer_online", "drucker_online"],
+      resume_print: ["resume_print", "druck_fortsetzen"],
       secondary_multi_color_box_spools: ["secondary_multi_color_box_spools", "ace_spulen_sekundar"],
       target_hotbed_temperature: ["target_hotbed_temperature", "ziel_heizbett_temperatur"],
-      target_nozzle_temperature: ["target_nozzle_temperature", "ziel_dusentemperatur"]
+      target_nozzle_temperature: ["target_nozzle_temperature", "ziel_dusentemperatur"],
+      cancel_print: ["cancel_print", "druck_abbrechen"]
     }[r] || [r];
     if (e) for (const s in t) {
       const n = t[s],
