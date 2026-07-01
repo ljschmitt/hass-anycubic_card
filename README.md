@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.3.0-beta.14`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.0-beta.14`.
+- Current fork release: `v0.3.0-beta.15`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.0-beta.15`.
+- Version `v0.3.0-beta.15` keeps the card release in lockstep with the integration beta that fixes the initial Kobra X camera-light command type after Home Assistant restarts.
 - Version `v0.3.0-beta.14` keeps the card release in lockstep with the integration beta that adds camera-light debug logging for HA/Slicer comparison.
 - Version `v0.3.0-beta.13` keeps the card release in lockstep with the integration beta that rebuilds the Anycubic Cloud panel bundle so the displayed panel version matches the installed release.
 - Version `v0.3.0-beta.12` keeps the card release in lockstep with the integration beta that cleans up Kobra-X MQTT report warnings.
@@ -74,7 +75,7 @@ type: custom:anycubic-card
 printer_id: <home-assistant-device-id>
 ```
 
-The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.0-beta.14` with `0.3.0-beta.14`.
+The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.0-beta.15` with `0.3.0-beta.15`.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
