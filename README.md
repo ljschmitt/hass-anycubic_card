@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.3.1`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.1`.
+- Current fork release: `v0.3.2`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.2`.
+- Version `v0.3.2` keeps the card asset in lockstep with the integration stable release that adds explicit dark-mode local brand assets and documents Home Assistant's local brands proxy behavior.
 - Version `v0.3.1` keeps the card asset in lockstep with the integration stable release that restores the compatible `job_z_thickness` layer-height entity suffix and updates the integration's local brand assets.
 - Version `v0.3.0` keeps the card asset in lockstep with the integration stable release that adds the camera-light entity, file-list improvements, stable English entity IDs, Kobra X ACE/material handling, and the tested Kobra X camera-light command type.
 - Version `v0.2.10` stabilizes the spool layout so dynamic spool lists keep their real slots while showing up to four evenly sized spool items per row.
@@ -70,7 +71,7 @@ type: custom:anycubic-card
 printer_id: <home-assistant-device-id>
 ```
 
-The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.1` with `0.3.1`.
+The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.2` with `0.3.2`.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
