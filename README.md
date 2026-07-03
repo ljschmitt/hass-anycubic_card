@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.3.3`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.3`.
+- Current fork release: `v0.3.4`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.4`.
+- Version `v0.3.4` keeps the card asset in lockstep with the integration stable release that preserves secondary ACE Pro state when Anycubic sends single-box ACE updates.
 - Version `v0.3.3` keeps the card asset in lockstep with the integration stable release and fixes ETA formatting so the dashboard card shows local Home Assistant/browser time instead of UTC.
 - Version `v0.3.2` keeps the card asset in lockstep with the integration stable release that adds explicit dark-mode local brand assets and documents Home Assistant's local brands proxy behavior.
 - Version `v0.3.1` keeps the card asset in lockstep with the integration stable release that restores the compatible `job_z_thickness` layer-height entity suffix and updates the integration's local brand assets.
@@ -72,7 +73,7 @@ type: custom:anycubic-card
 printer_id: <home-assistant-device-id>
 ```
 
-The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.3` with `0.3.3`.
+The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.4` with `0.3.4`.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
