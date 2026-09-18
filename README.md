@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.3.9`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.9`.
+- Current fork release: `v0.4.0`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.0`.
+- Version `v0.4.0` synchronizes the stable bundle with integration `v0.4.0`, which restores simple log-based Slicer token extraction. Card behavior is unchanged.
 - Version `v0.3.9` synchronizes the stable card bundle with integration `v0.3.9`. The Windows token recovery helper and updated authentication instructions are provided by the integration repository.
 - Version `v0.3.8` keeps the card asset in lockstep with the integration stable release that adds on-demand previews to local and USB print preparation.
 - Version `v0.3.7` keeps the card asset in lockstep with the integration stable release that correctly handles empty local and USB folders.
