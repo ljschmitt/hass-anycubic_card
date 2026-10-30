@@ -10,8 +10,9 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.4.3`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.3`.
+- Current fork release: `v0.4.4`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.4`.
+- Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
 - Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
 - Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
 - Version `v0.4.1` synchronizes the stable bundle with the integration's missing ACE feed-status setup fix. Card behavior is unchanged.
