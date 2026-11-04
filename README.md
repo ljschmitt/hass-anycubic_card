@@ -10,15 +10,23 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Current Fork Status
 
-- Current fork release: `v0.3.0-beta.15`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.3.0-beta.15`.
-- Version `v0.3.0-beta.15` keeps the card release in lockstep with the integration beta that fixes the initial Kobra X camera-light command type after Home Assistant restarts.
-- Version `v0.3.0-beta.14` keeps the card release in lockstep with the integration beta that adds camera-light debug logging for HA/Slicer comparison.
-- Version `v0.3.0-beta.13` keeps the card release in lockstep with the integration beta that rebuilds the Anycubic Cloud panel bundle so the displayed panel version matches the installed release.
-- Version `v0.3.0-beta.12` keeps the card release in lockstep with the integration beta that cleans up Kobra-X MQTT report warnings.
-- Version `v0.3.0-beta.11` keeps the card release in lockstep with the integration beta that tests improved Anycubic camera-light initialization.
-- Version `v0.3.0-beta.10` keeps the card asset in lockstep with the integration beta that adds cautious first-open auto-loading for file-list tabs.
-- Version `v0.3.0-beta.9` is a beta compatibility release for the integration's stable English entity names and removes compatibility with old localized/German entity-ID fallbacks.
+- Current fork release: `v0.4.4`
+- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.4`.
+- Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
+- Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
+- Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
+- Version `v0.4.1` synchronizes the stable bundle with the integration's missing ACE feed-status setup fix. Card behavior is unchanged.
+- Version `v0.4.0` synchronizes the stable bundle with integration `v0.4.0`, which restores simple log-based Slicer token extraction. Card behavior is unchanged.
+- Version `v0.3.9` synchronizes the stable card bundle with integration `v0.3.9`. The Windows token recovery helper and updated authentication instructions are provided by the integration repository.
+- Version `v0.3.8` keeps the card asset in lockstep with the integration stable release that adds on-demand previews to local and USB print preparation.
+- Version `v0.3.7` keeps the card asset in lockstep with the integration stable release that correctly handles empty local and USB folders.
+- Version `v0.3.6` limits printer discovery to devices that actually belong to the Anycubic integration, preventing same-named network devices from appearing as duplicate printers.
+- Version `v0.3.5` keeps the card asset in lockstep with the integration stable release that improves local/USB file-list loading feedback and keeps the 2x ACE Pro state fix.
+- Version `v0.3.4` keeps the card asset in lockstep with the integration stable release that preserves secondary ACE Pro state when Anycubic sends single-box ACE updates.
+- Version `v0.3.3` keeps the card asset in lockstep with the integration stable release and fixes ETA formatting so the dashboard card shows local Home Assistant/browser time instead of UTC.
+- Version `v0.3.2` keeps the card asset in lockstep with the integration stable release that adds explicit dark-mode local brand assets and documents Home Assistant's local brands proxy behavior.
+- Version `v0.3.1` keeps the card asset in lockstep with the integration stable release that restores the compatible `job_z_thickness` layer-height entity suffix and updates the integration's local brand assets.
+- Version `v0.3.0` keeps the card asset in lockstep with the integration stable release that adds the camera-light entity, file-list improvements, stable English entity IDs, Kobra X ACE/material handling, and the tested Kobra X camera-light command type.
 - Version `v0.2.10` stabilizes the spool layout so dynamic spool lists keep their real slots while showing up to four evenly sized spool items per row.
 - Version `v0.2.9` refreshes entity lookup when Home Assistant updates arrive, keeps compatibility with existing German entity IDs, and shows Kobra X material-rack slots reserved by ACE as `ACE Feed` instead of normal filament.
 - Version `v0.2.8` keeps compatibility with `hass-anycubic_cloud_v3` `v0.2.8` and adds fallback mappings for existing German entity IDs while keeping stable English entity IDs as the expected default.
@@ -75,7 +83,7 @@ type: custom:anycubic-card
 printer_id: <home-assistant-device-id>
 ```
 
-The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.0-beta.15` with `0.3.0-beta.15`.
+The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.9` with `0.3.9`.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
