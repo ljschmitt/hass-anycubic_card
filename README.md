@@ -91,7 +91,15 @@ If an existing installation still has localized German entity IDs, use the integ
 
 The card's camera field expects an existing Home Assistant `camera.*` entity. It does not create an Anycubic cloud camera entity by itself.
 
-For the Anycubic cloud camera stream, use the integration's built-in **Anycubic Cloud -> Nebenansicht** panel. That panel starts the stream manually with Play and documents the HTTPS/secure-context requirement.
+Clicking the printer graphic can open the Anycubic cloud camera directly in this card. It uses the integration to obtain an authenticated Agora/WebRTC session in the browser; no fixed RTSP/MJPEG URL or native Home Assistant cloud `camera.*` entity is provided. Cloud playback requires HTTPS or another secure browser context. The built-in **Anycubic Cloud -> Side view / Nebenansicht** panel is another option and starts playback manually with Play.
+
+The card currently has no option to open the camera automatically as its default view. `alwaysShow: true` keeps printer status and ACE controls expanded; it does not start the camera. An existing local camera can be selected with `cameraEntityId`. A local camera bridge or alternative firmware must support the particular printer; Kobra 3 Max support for such a bridge is not confirmed here.
+
+## Unreleased ACE Drying Fix
+
+The shared panel/card dialog now resolves the integration's existing `drying_start_preset_*` buttons, calls their actual registry entity IDs and refreshes controls immediately when switching ACEs or printers. Configure duration (minutes) and temperature (°C) in the integration's drying presets first. Missing presets remain hidden and unavailable buttons do not send commands.
+
+The matching integration fix preserves the selected ACE ID in stop orders: each stop button now affects only that ACE. These changes address [integration issue #23](https://github.com/ljschmitt/hass-anycubic_cloud_v3/issues/23) and need both updated frontend bundles and the integration backend. They are development changes, not yet a published release; confirmation on the affected Kobra 3 Max is pending.
 
 ## Gallery
 
