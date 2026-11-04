@@ -1,17 +1,17 @@
-# Anycubic Dashboard Card
+# Anycubic Cloud Card
 
 Home Assistant Lovelace/Dashboard card for Anycubic printers.
 
-This repository is the dashboard-card fork intended for use with:
+Optional dashboard card with printer status, ACE controls and camera view for:
 
 ➡️ [ljschmitt/hass-anycubic_cloud_v3](https://github.com/ljschmitt/hass-anycubic_cloud_v3)
 
 The card is optional. The integration already includes its own Home Assistant panel named **Anycubic Cloud**. Install this card only if you want an additional Lovelace/Dashboard card.
 
-## Current Fork Status
+## Release status
 
-- Current fork release: `v0.4.4`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.4`.
+- Current beta: `v0.4.5-beta.1`; latest stable remains `v0.4.4`.
+- Use this beta together with **Anycubic Cloud** integration `v0.4.5-beta.1`. Hardware acceptance of the combined candidate is pending, especially Kobra 3 Max drying. Stable promotion follows that confirmation.
 - Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
 - Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
 - Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
@@ -33,6 +33,8 @@ The card is optional. The integration already includes its own Home Assistant pa
 - Version `v0.2.7` added compatibility mappings for the stable entity IDs used by `hass-anycubic_cloud_v3` `v0.2.7`, including print progress, job status, time values, temperatures, online status, preview image, and ACE spool sensors.
 - This fork now publishes the dashboard-card asset expected by this integration. For new installations, use this repository, not the original upstream card.
 - The original upstream card was created by WaresWichall. It is credited below for project history, but it is no longer the recommended repository for this forked integration.
+
+The display name is now **Anycubic Cloud Card**, previously **Anycubic Frontend Card**. Repository URLs, existing entity IDs and `type: custom:anycubic-card` remain unchanged. The card is a dashboard frontend; printer communication and firmware handling belong to the matching integration.
 
 ## Features
 
@@ -56,7 +58,7 @@ The card is optional. The integration already includes its own Home Assistant pa
    ```
 
 4. Select category **Dashboard** or **Lovelace**.
-5. Install **Anycubic Frontend Card**.
+5. Install **Anycubic Cloud Card**.
 6. Reload the browser after installation.
 
 If the original card from `WaresWichall/hass-anycubic_card` is already installed, remove it first or make sure Home Assistant loads only one `anycubic-card.js` resource. Loading both can cause browser-cache or custom-element conflicts.
@@ -95,11 +97,11 @@ Clicking the printer graphic can open the Anycubic cloud camera directly in this
 
 The card currently has no option to open the camera automatically as its default view. `alwaysShow: true` keeps printer status and ACE controls expanded; it does not start the camera. An existing local camera can be selected with `cameraEntityId`. A local camera bridge or alternative firmware must support the particular printer; Kobra 3 Max support for such a bridge is not confirmed here.
 
-## Unreleased ACE Drying Fix
+## ACE drying fix (0.4.5-beta.1)
 
 The shared panel/card dialog now resolves the integration's existing `drying_start_preset_*` buttons, calls their actual registry entity IDs and refreshes controls immediately when switching ACEs or printers. Configure duration (minutes) and temperature (°C) in the integration's drying presets first. Missing presets remain hidden and unavailable buttons do not send commands.
 
-The matching integration fix preserves the selected ACE ID in stop orders: each stop button now affects only that ACE. These changes address [integration issue #23](https://github.com/ljschmitt/hass-anycubic_cloud_v3/issues/23) and need both updated frontend bundles and the integration backend. They are development changes, not yet a published release; confirmation on the affected Kobra 3 Max is pending.
+The matching integration fix preserves the selected ACE ID in stop orders: each stop button now affects only that ACE. These changes address [integration issue #23](https://github.com/ljschmitt/hass-anycubic_cloud_v3/issues/23) and need both updated frontend bundles and the integration backend. They are beta changes; confirmation on the affected Kobra 3 Max is pending.
 
 ## Gallery
 
