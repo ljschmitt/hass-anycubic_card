@@ -1,17 +1,16 @@
-# Anycubic Dashboard Card
+# Anycubic Cloud Card
 
 Home Assistant Lovelace/Dashboard card for Anycubic printers.
 
-This repository is the dashboard-card fork intended for use with:
+Optional dashboard card with printer status, ACE controls and camera view for:
 
 ➡️ [ljschmitt/hass-anycubic_cloud_v3](https://github.com/ljschmitt/hass-anycubic_cloud_v3)
 
 The card is optional. The integration already includes its own Home Assistant panel named **Anycubic Cloud**. Install this card only if you want an additional Lovelace/Dashboard card.
 
-## Current Fork Status
+## Release status
 
-- Current fork release: `v0.4.4`
-- Use this fork together with `hass-anycubic_cloud_v3` `v0.4.4`.
+- Current stable version: `v0.4.5`. Use it with **Anycubic Cloud** integration `v0.4.5` for the updated ACE dialog and the MQTT status and drying fixes.
 - Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
 - Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
 - Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
@@ -33,6 +32,8 @@ The card is optional. The integration already includes its own Home Assistant pa
 - Version `v0.2.7` added compatibility mappings for the stable entity IDs used by `hass-anycubic_cloud_v3` `v0.2.7`, including print progress, job status, time values, temperatures, online status, preview image, and ACE spool sensors.
 - This fork now publishes the dashboard-card asset expected by this integration. For new installations, use this repository, not the original upstream card.
 - The original upstream card was created by WaresWichall. It is credited below for project history, but it is no longer the recommended repository for this forked integration.
+
+The display name is now **Anycubic Cloud Card**, previously **Anycubic Frontend Card**. Repository URLs, existing entity IDs and `type: custom:anycubic-card` remain unchanged. The card is a dashboard frontend; printer communication and firmware handling belong to the matching integration.
 
 ## Features
 
@@ -56,7 +57,7 @@ The card is optional. The integration already includes its own Home Assistant pa
    ```
 
 4. Select category **Dashboard** or **Lovelace**.
-5. Install **Anycubic Frontend Card**.
+5. Install **Anycubic Cloud Card**.
 6. Reload the browser after installation.
 
 If the original card from `WaresWichall/hass-anycubic_card` is already installed, remove it first or make sure Home Assistant loads only one `anycubic-card.js` resource. Loading both can cause browser-cache or custom-element conflicts.
@@ -91,7 +92,15 @@ If an existing installation still has localized German entity IDs, use the integ
 
 The card's camera field expects an existing Home Assistant `camera.*` entity. It does not create an Anycubic cloud camera entity by itself.
 
-For the Anycubic cloud camera stream, use the integration's built-in **Anycubic Cloud -> Nebenansicht** panel. That panel starts the stream manually with Play and documents the HTTPS/secure-context requirement.
+Clicking the printer graphic can open the Anycubic cloud camera directly in this card. It uses the integration to obtain an authenticated Agora/WebRTC session in the browser; no fixed RTSP/MJPEG URL or native Home Assistant cloud `camera.*` entity is provided. Cloud playback requires HTTPS or another secure browser context. The built-in **Anycubic Cloud -> Side view / Nebenansicht** panel is another option and starts playback manually with Play.
+
+The card currently has no option to open the camera automatically as its default view. `alwaysShow: true` keeps printer status and ACE controls expanded; it does not start the camera. An existing local camera can be selected with `cameraEntityId`. A local camera bridge or alternative firmware must support the particular printer; Kobra 3 Max support for such a bridge is not confirmed here.
+
+## ACE drying (0.4.5)
+
+The shared panel/card dialog now resolves the integration's existing `drying_start_preset_*` buttons, calls their actual registry entity IDs and refreshes controls immediately when switching ACEs or printers. Configure duration (minutes) and temperature (°C) in the integration's drying presets first. Missing presets remain hidden and unavailable buttons do not send commands.
+
+The matching integration preserves the selected ACE ID in stop orders. Each stop button affects only that ACE. The Kobra X acknowledged a stop from Home Assistant in the live test. Hardware feedback on the Kobra 3 Max and S1 Max remains open. Use both updated packages for the dialog and status fixes. [Integration issue #23](https://github.com/ljschmitt/hass-anycubic_cloud_v3/issues/23)
 
 ## Gallery
 
