@@ -10,6 +10,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Beta `v0.4.6-beta.3` matches Anycubic Cloud integration `v0.4.6-beta.3`. Click the plate or nozzle thumbnail to open the illustrated selection on an idle Kobra X. Choose the installed hardware and use **Apply** to send the change.
 - Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
 - Beta `v0.4.6-beta.1` matches Anycubic Cloud integration `v0.4.6-beta.1` and shows the reported build plate, nozzle material, and nozzle diameter below the expanded printer statistics. Missing values are omitted.
 - Current stable version: `v0.4.5`. Use it with **Anycubic Cloud** integration `v0.4.5` for the updated ACE dialog and the MQTT status and drying fixes.
@@ -105,7 +106,7 @@ Use these PNG filenames:
 - `textured_pei_plate.png`, `smooth_transfer_plate.png`, `low_temperature_plate.png`
 - `brass.png`, `hardened_steel.png`
 
-The card selects the thumbnail from the printer-reported plate type or nozzle material. Unavailable images leave the sensor text visible. The card only loads these images from Home Assistant's local static file directory. The release includes no Slicer graphics.
+The card selects the thumbnail from the printer-reported plate type or nozzle material. With `0.4.6-beta.3`, the same images appear in the two selection dialogs. Nozzle choices show the diameter and material beside the matching image. If an image is unavailable, the label stays visible. The card loads the optional Slicer images from Home Assistant's local static file directory.
 
 ## Camera Entity
 
