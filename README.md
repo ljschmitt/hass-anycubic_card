@@ -10,6 +10,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Beta `v0.4.6-beta.4` matches Anycubic Cloud integration `v0.4.6-beta.4` and centers the hardware previews at the standard spool size. The integration's sidebar panel can use the same local images as the card.
 - Beta `v0.4.6-beta.3` matches Anycubic Cloud integration `v0.4.6-beta.3`. Click the plate or nozzle thumbnail to open the illustrated selection on an idle Kobra X. Choose the installed hardware and use **Apply** to send the change.
 - Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
 - Beta `v0.4.6-beta.1` matches Anycubic Cloud integration `v0.4.6-beta.1` and shows the reported build plate, nozzle material, and nozzle diameter below the expanded printer statistics. Missing values are omitted.
@@ -107,6 +108,8 @@ Use these PNG filenames:
 - `brass.png`, `hardened_steel.png`
 
 The card selects the thumbnail from the printer-reported plate type or nozzle material. With `0.4.6-beta.3`, the same images appear in the two selection dialogs. Nozzle choices show the diameter and material beside the matching image. If an image is unavailable, the label stays visible. The card loads the optional Slicer images from Home Assistant's local static file directory.
+
+From `0.4.6-beta.4`, the Anycubic Cloud sidebar panel also uses `/config/www/anycubic-hardware/`. Set the card path as shown above to use the same files in both places.
 
 ## Camera Entity
 
