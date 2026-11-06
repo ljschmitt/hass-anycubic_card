@@ -89,6 +89,23 @@ The card discovers the printer's related entities by device and by stable entity
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
+## Optional local hardware images
+
+With integration and card `0.4.6-beta.1` or newer, place any available images in a directory such as `/config/www/anycubic-hardware/` in Home Assistant. Add the matching `/local/` path to the card YAML:
+
+```yaml
+type: custom:anycubic-card
+printer_id: <home-assistant-device-id>
+hardwareImagePath: /local/anycubic-hardware
+```
+
+Use these PNG filenames:
+
+- `textured_pei_plate.png`, `smooth_transfer_plate.png`, `low_temperature_plate.png`
+- `brass.png`, `hardened_steel.png`
+
+The card selects the thumbnail from the printer-reported plate type or nozzle material. Unavailable images leave the sensor text visible. The card only loads these images from Home Assistant's local static file directory. The release includes no Slicer graphics.
+
 ## Camera Entity
 
 The card's camera field expects an existing Home Assistant `camera.*` entity. It does not create an Anycubic cloud camera entity by itself.
