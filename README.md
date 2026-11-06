@@ -10,6 +10,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
 - Beta `v0.4.6-beta.1` matches Anycubic Cloud integration `v0.4.6-beta.1` and shows the reported build plate, nozzle material, and nozzle diameter below the expanded printer statistics. Missing values are omitted.
 - Current stable version: `v0.4.5`. Use it with **Anycubic Cloud** integration `v0.4.5` for the updated ACE dialog and the MQTT status and drying fixes.
 - Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
