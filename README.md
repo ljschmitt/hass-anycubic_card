@@ -10,6 +10,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Stable `v0.4.8` matches Anycubic Cloud integration `v0.4.8` and adds live state feedback to the power icon.
 - Stable `v0.4.7` matches Anycubic Cloud integration `v0.4.7`, which fixes cleanup when the last account is unloaded. The illustrated plate and nozzle controls continue to use the images supplied by the integration.
 
 - Beta `v0.4.6-beta.4` matches Anycubic Cloud integration `v0.4.6-beta.4`, centers the hardware previews at the standard spool size, and loads the original Slicer images from the integration.
@@ -91,6 +92,8 @@ printer_id: <home-assistant-device-id>
 ```
 
 The card discovers the printer's related entities by device and by stable entity-ID suffixes. For best compatibility, use the same version of this card and `hass-anycubic_cloud_v3`, for example `0.3.9` with `0.3.9`.
+
+From `v0.4.8`, the power icon shows the state of the optional `powerEntityId` entity. **On** uses the theme's success color, **Off** is a ring, and **Unknown** and **Unavailable** use a neutral icon. The tooltip shows the current Home Assistant state.
 
 If an existing installation still has localized German entity IDs, use the integration service `anycubic_ha_integration.migrate_entity_ids` with `dry_run: true` first. Only run it with `dry_run: false` after checking the planned entity renames in the Home Assistant log. New installations should use stable English entity IDs and English entity names.
 
