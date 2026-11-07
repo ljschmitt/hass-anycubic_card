@@ -14,7 +14,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 - Beta `v0.4.6-beta.3` matches Anycubic Cloud integration `v0.4.6-beta.3`. Click the plate or nozzle thumbnail to open the illustrated selection on an idle Kobra X. Choose the installed hardware and use **Apply** to send the change.
 - Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
 - Beta `v0.4.6-beta.1` matches Anycubic Cloud integration `v0.4.6-beta.1` and shows the reported build plate, nozzle material, and nozzle diameter below the expanded printer statistics. Missing values are omitted.
-- Current stable version: `v0.4.5`. Use it with **Anycubic Cloud** integration `v0.4.5` for the updated ACE dialog and the MQTT status and drying fixes.
+- Use stable `v0.4.6` with **Anycubic Cloud** integration `v0.4.6` for illustrated Kobra X hardware controls and ACE 2 Pro fill estimates. Occupied slots without a verified estimate show **Unknown**.
 - Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
 - Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
 - Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
@@ -94,7 +94,7 @@ If an existing installation still has localized German entity IDs, use the integ
 
 ## Optional local hardware images
 
-From `0.4.6-beta.4`, the matching integration supplies the original Slicer images to both the sidebar panel and this card. To use custom images in the card, place them in a directory such as `/config/www/anycubic-hardware/` in Home Assistant and add its `/local/` path to the card YAML:
+From `0.4.6`, the matching integration supplies the original Slicer images to both the sidebar panel and this card. To use custom images in the card, place them in a directory such as `/config/www/anycubic-hardware/` in Home Assistant and add its `/local/` path to the card YAML:
 
 ```yaml
 type: custom:anycubic-card
