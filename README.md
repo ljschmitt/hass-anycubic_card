@@ -10,6 +10,8 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Stable `v0.4.7` matches Anycubic Cloud integration `v0.4.7`, which fixes cleanup when the last account is unloaded. The illustrated plate and nozzle controls continue to use the images supplied by the integration.
+
 - Beta `v0.4.6-beta.4` matches Anycubic Cloud integration `v0.4.6-beta.4`, centers the hardware previews at the standard spool size, and loads the original Slicer images from the integration.
 - Beta `v0.4.6-beta.3` matches Anycubic Cloud integration `v0.4.6-beta.3`. Click the plate or nozzle thumbnail to open the illustrated selection on an idle Kobra X. Choose the installed hardware and use **Apply** to send the change.
 - Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
