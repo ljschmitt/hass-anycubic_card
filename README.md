@@ -10,7 +10,7 @@ Anycubic Cloud integration 0.4.9 serves this card as a Lovelace resource at `/an
 
 ## Release status
 
-- Stable v0.4.9 matches the module bundled with Anycubic Cloud integration v0.4.9.
+- Stable v0.5.0 matches the module bundled with Anycubic Cloud integration v0.5.0. Each ACE shows its temperature and reported humidity above the spools. Humidity stays hidden when no valid reading is available.
 
 - Beta `v0.4.9-beta.6` matches integration `v0.4.9-beta.6`. It resolves the registered ACE refill switch and links to the integration settings when drying presets are missing.
 - Stable `v0.4.8` matches Anycubic Cloud integration `v0.4.8` and adds live state feedback to the power icon.
