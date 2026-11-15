@@ -6,9 +6,11 @@ Optional dashboard card with printer status, ACE controls and camera view for:
 
 ➡️ [ljschmitt/hass-anycubic_cloud_v3](https://github.com/ljschmitt/hass-anycubic_cloud_v3)
 
-The card is optional. The integration already includes its own Home Assistant panel named **Anycubic Cloud**. Install this card only if you want an additional Lovelace/Dashboard card.
+Anycubic Cloud integration 0.4.9 serves this card as a Lovelace resource at `/anycubic-cloud-card.js`. Existing cards keep their settings when you switch the resource URL. This repository also provides the standalone dashboard module.
 
 ## Release status
+
+- Stable v0.4.9 matches the module bundled with Anycubic Cloud integration v0.4.9.
 
 - Beta `v0.4.9-beta.6` matches integration `v0.4.9-beta.6`. It resolves the registered ACE refill switch and links to the integration settings when drying presets are missing.
 - Stable `v0.4.8` matches Anycubic Cloud integration `v0.4.8` and adds live state feedback to the power icon.
