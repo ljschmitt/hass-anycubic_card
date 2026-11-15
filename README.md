@@ -10,6 +10,7 @@ The card is optional. The integration already includes its own Home Assistant pa
 
 ## Release status
 
+- Beta `v0.4.9-beta.6` matches integration `v0.4.9-beta.6`. It resolves the registered ACE refill switch and links to the integration settings when drying presets are missing.
 - Stable `v0.4.8` matches Anycubic Cloud integration `v0.4.8` and adds live state feedback to the power icon.
 - Stable `v0.4.7` matches Anycubic Cloud integration `v0.4.7`, which fixes cleanup when the last account is unloaded. The illustrated plate and nozzle controls continue to use the images supplied by the integration.
 
