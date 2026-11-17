@@ -10,7 +10,7 @@ Anycubic Cloud integration 0.4.9 serves this card as a Lovelace resource at `/an
 
 ## Release status
 
-- Beta v0.5.1-beta.1 matches integration v0.5.1-beta.1 and adds experimental Kinesis playback for the Kobra 2 Max (model 20023).
+- Beta v0.5.1-beta.2 matches integration v0.5.1-beta.2. The Kobra 2 Max Kinesis viewer tolerates empty signaling messages, and the card displays ACE readings refreshed by the integration.
 
 - Stable v0.5.0 matches the module bundled with Anycubic Cloud integration v0.5.0. Each ACE shows its temperature and reported humidity above the spools. Humidity stays hidden when no valid reading is available.
 
