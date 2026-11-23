@@ -10,6 +10,8 @@ Anycubic Cloud integration 0.4.9 serves this card as a Lovelace resource at `/an
 
 ## Release status
 
+- Stable **v0.5.1** matches integration **v0.5.1**. Unknown or invalid spool-fill labels are hidden; verified percentages from 0 to 100 remain visible. Material names, colors and controls are preserved. Includes the model-specific Kobra 2 Max camera fixes from the beta series; reporter confirmation of the automatic first-start retry remains pending in integration #31. Update the integration alone if you use its bundled card.
+
 - Beta v0.5.1-beta.3 matches integration v0.5.1-beta.3 and retries a Kobra 2 Max camera startup timeout once with a fresh session. The browser console identifies the pending startup stage.
 
 - Beta v0.5.1-beta.2 matches integration v0.5.1-beta.2. The Kobra 2 Max Kinesis viewer tolerates empty signaling messages, and the card displays ACE readings refreshed by the integration.
@@ -24,7 +26,7 @@ Anycubic Cloud integration 0.4.9 serves this card as a Lovelace resource at `/an
 - Beta `v0.4.6-beta.3` matches Anycubic Cloud integration `v0.4.6-beta.3`. Click the plate or nozzle thumbnail to open the illustrated selection on an idle Kobra X. Choose the installed hardware and use **Apply** to send the change.
 - Beta `v0.4.6-beta.2` matches Anycubic Cloud integration `v0.4.6-beta.2`. Open the plate type in the expanded card to select the mounted plate on a supported, idle Kobra X.
 - Beta `v0.4.6-beta.1` matches Anycubic Cloud integration `v0.4.6-beta.1` and shows the reported build plate, nozzle material, and nozzle diameter below the expanded printer statistics. Missing values are omitted.
-- Use stable `v0.4.6` with **Anycubic Cloud** integration `v0.4.6` for illustrated Kobra X hardware controls and ACE 2 Pro fill estimates. Occupied slots without a verified estimate show **Unknown**.
+- Use stable `v0.4.6` with **Anycubic Cloud** integration `v0.4.6` for illustrated Kobra X hardware controls and ACE 2 Pro fill estimates. From **v0.5.1**, occupied slots without a verified estimate omit the fill label; HA data remains unknown.
 - Version `v0.4.4` synchronizes the stable bundle with the integration's MQTT certificate-verification and Kobra S1 Max elapsed-time fixes. Time normalization is handled by the integration; existing sensor units, card settings, entity IDs and slot mappings are unchanged.
 - Version `v0.4.3` synchronizes the stable bundle with the integration's additional primary-ACE `loaded_slot` attribute and macOS token instructions. Existing card behavior, entity IDs and slot mappings are unchanged. The added attribute is available for custom automations and templates.
 - Version `v0.4.2` synchronizes the stable bundle with the integration's external-holder parsing and setup-retry fix. Card behavior and entity IDs are unchanged.
